@@ -27,3 +27,9 @@ https://docs.google.com/spreadsheets/d/1Dp0lw0fbXMTh2TombgdqqXmFBW7y4oSt7LUa5qMb
 ___
 ### ワイヤーフレーム
 https://cacoo.com/diagrams/zvd3JfHxMD0bTUwA/63E37
+___
+### ER図
+![ER図](/Users/Tatsuhiko/workspace/nekonowa/public/images/ER図.png)
+___
+### 画面遷移図
+![画面遷移図](/Users/Tatsuhiko/workspace/nekonowa/public/images/画面遷移図.png)
