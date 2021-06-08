@@ -29,7 +29,7 @@ ___
 https://cacoo.com/diagrams/zvd3JfHxMD0bTUwA/63E37
 ___
 ### ER図
-![ER図](/Users/Tatsuhiko/workspace/nekonowa/public/images/ER図.png)
+![ER図](https://user-images.githubusercontent.com/78890263/121145443-ebf17500-c879-11eb-82a5-c51fba528d87.png)
 ___
 ### 画面遷移図
-![画面遷移図](/Users/Tatsuhiko/workspace/nekonowa/public/images/画面遷移図.png)
+![画面遷移図](https://user-images.githubusercontent.com/78890263/121145762-3e329600-c87a-11eb-98da-7f303334b0c2.png)
