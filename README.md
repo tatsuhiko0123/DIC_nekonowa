@@ -49,4 +49,4 @@ ___
 ![ER図](https://user-images.githubusercontent.com/78890263/121282576-b9e12100-c914-11eb-86fc-19f6c8380e34.png)
 ___
 ### 画面遷移図
-![画面遷移図](https://user-images.githubusercontent.com/78890263/121145762-3e329600-c87a-11eb-98da-7f303334b0c2.png)
+![画面遷移図](https://user-images.githubusercontent.com/78890263/121299383-49e09400-c930-11eb-8f85-f192b0f5ae48.png)
