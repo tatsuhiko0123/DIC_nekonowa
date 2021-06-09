@@ -46,7 +46,7 @@ ___
 https://cacoo.com/diagrams/zvd3JfHxMD0bTUwA/63E37
 ___
 ### ER図
-![ER図](https://user-images.githubusercontent.com/78890263/121282576-b9e12100-c914-11eb-86fc-19f6c8380e34.png)
+![ER図](https://user-images.githubusercontent.com/78890263/121329637-596fd500-c950-11eb-9c00-927603b7cf6b.png)
 ___
 ### 画面遷移図
 ![画面遷移図](https://user-images.githubusercontent.com/78890263/121299383-49e09400-c930-11eb-8f85-f192b0f5ae48.png)
