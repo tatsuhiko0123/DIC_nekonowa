@@ -9,6 +9,12 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
   <div class="post_comment">
     <%= form.label :紹介文 %>
     <%= form.text_area :comment %>

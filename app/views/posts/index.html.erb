@@ -2,6 +2,7 @@
 <p><%= notice %></p>
 <% @posts.each do |post| %>
   <div>
+    <%= image_tag post.image.to_s %>
     <%= post.comment %> 
     <%= link_to '詳細を確認する', post_path(post.id) %>
     <%= link_to "投稿を編集する", edit_post_path(post.id) %>

@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if params[:back]
+      @post = Post.new(post_params)
+    else
+      @post = Post.new
+    end
   end
 
   def create
@@ -46,7 +50,7 @@ class PostsController < ApplicationController
   end
   private
   def post_params
-    params.require(:post).permit(:comment)
+    params.require(:post).permit(:image, :image_cache, :comment)
   end
 
   def set_post
