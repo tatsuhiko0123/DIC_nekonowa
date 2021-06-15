@@ -17,7 +17,23 @@
   </div>
   <div class="post_comment">
     <%= form.label :紹介文 %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, placeholder: "猫の簡単な紹介を入力" %>
+  </div>
+  <div class="post_breed">
+    <%= form.label :種類 %>
+    <%= form.text_field :breed, placeholder: "種類を入力" %>
+  </div>
+  <div class="post_gender">
+    <%= form.label :性別 %>
+    <%= form.select :gender, Post.genders.keys %>
+  </div>
+  <div class="post_age">
+    <%= form.label :推定年齢 %>
+    <%= form.select :age, Post.ages.keys %>
+  </div>
+  <div>
+    <%= form.label :エリア %><br>
+    <%= form.select :prefecture, Post.prefectures.keys %>
   </div>
   <%= form.submit %>
   <%= form.submit "戻る" %>
