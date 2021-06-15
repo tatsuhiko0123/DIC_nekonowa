@@ -1,2 +1,18 @@
-<h1>Posts#confirm</h1>
-<p>Find me in app/views/posts/confirm.html.erb</p>
+<%= form_with(model: @post, local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="post_comment">
+    <%= form.label :紹介文 %>
+    <%= form.text_area :comment %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to '投稿一覧画面に戻る', posts_path %>
