@@ -9,8 +9,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to posts_path, notice: "新規投稿を作成しました！"
+    @post = Post.new(post_params)
+    if params[:back]
+      render :new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "新規投稿を作成しました！"
+      else
+        render :new
+      end
+    end
   end
 
   def show
@@ -33,6 +41,8 @@ class PostsController < ApplicationController
   end
 
   def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
   end
   private
   def post_params

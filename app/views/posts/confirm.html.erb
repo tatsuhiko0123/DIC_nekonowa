@@ -1,0 +1,7 @@
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :comment %>
+  <p>紹介文:<%= @post.comment %></p>
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
