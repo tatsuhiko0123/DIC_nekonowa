@@ -1,0 +1,11 @@
+<h1>ブログ詳細画面</h1>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @post.image.url %>
+</p>
+<p>紹介文: <%= @post.comment %></p>
+<p>種類: <%= @post.breed %></p>
+<p>性別: <%= @post.gender %></p>
+<p>推定年齢: <%= @post.age %></p>
+<p>エリア: <%= @post.prefecture %></p>
+<%= link_to '投稿一覧画面に戻る', posts_path %>

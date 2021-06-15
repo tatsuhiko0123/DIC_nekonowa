@@ -1,0 +1,20 @@
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :comment %>
+  <%= form.hidden_field :breed %>
+  <%= form.hidden_field :gender %>
+  <%= form.hidden_field :age %>
+  <%= form.hidden_field :prefecture %>
+  <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+  <p>紹介文:<%= @post.comment %></p>
+  <p>種類:<%= @post.breed %></p>
+  <p>性別:<%= @post.gender %></p>
+  <p>推定年齢:<%= @post.age %></p>
+  <p>エリア:<%= @post.prefecture %></p>
+  <%= form.submit "投稿する" %>
+<% end %>
+<%= form_with(model:@post, url:new_post_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "戻る", name: "back" %>
+<% end %>

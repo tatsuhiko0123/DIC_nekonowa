@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  comment: MyText
+  breed: MyText
+  gender: 1
+  age: 1
+  prefectures: 1
+
+two:
+  image: MyString
+  comment: MyText
+  breed: MyText
+  gender: 1
+  age: 1
+  prefectures: 1
