@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'mimemagic', '0.3.7'
 gem 'devise'
+gem 'devise-i18n'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
