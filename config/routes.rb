@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'other_posts/new'
+  get 'other_posts/edit'
+  get 'other_posts/confirm'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :users, only: [:show]
