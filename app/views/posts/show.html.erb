@@ -1,4 +1,4 @@
-<h1>ブログ詳細画面</h1>
+<h1>投稿詳細画面</h1>
 <% unless @post.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
@@ -6,6 +6,7 @@
     <%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+<h2>基本情報</h2>
 <p>
   <strong>Image:</strong>
   <%= image_tag @post.image.url %>
@@ -15,4 +16,24 @@
 <p>性別: <%= @post.gender %></p>
 <p>推定年齢: <%= @post.age %></p>
 <p>エリア: <%= @post.prefecture %></p>
+<br><br>
 <%= link_to '投稿一覧画面に戻る', posts_path %>
+
+<%
+=begin %>
+
+<%= link_to '詳細情報を追加する', edit_other_post_path(post_id: @post.id) %>
+<h2>詳細情報</h2>
+<p>ワクチン接種: <%= @post.other_post.vaccination %></p>
+<p>去勢／避妊: <%= @post.breed %></p>
+<p>単身者応募: <%= @post.gender %></p>
+<p>高齢者応募: <%= @post.age %></p>
+<p>健康状態: <%= @post.prefecture %></p>
+<p>性格・特徴: <%= @post.prefecture %></p>
+<p>引き渡し条件: <%= @post.prefecture %></p>
+<p>備考: <%= @post.prefecture %></p>
+
+<%
+=end %>
+
+
