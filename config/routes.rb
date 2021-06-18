@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   resources :favorites, only: [:create, :destroy]
+  resources :other_posts
 end
