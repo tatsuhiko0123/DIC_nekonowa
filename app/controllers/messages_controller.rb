@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :set_conversation
+
   def index
     @messages = @conversation.messages
     if @messages.length > 10
@@ -28,5 +30,9 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:body, :user_id)
+  end
+
+  def set_conversation
+    @conversation = Conversation.find(params[:conversation_id])
   end
 end
