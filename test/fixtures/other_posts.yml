@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vaccination: 1
+  operation: 1
+  single: 1
+  old_age: 1
+  health_status: MyText
+  character: MyText
+  surrender: MyText
+  note: MyText
+  post: one
+
+two:
+  vaccination: 1
+  operation: 1
+  single: 1
+  old_age: 1
+  health_status: MyText
+  character: MyText
+  surrender: MyText
+  note: MyText
+  post: two
