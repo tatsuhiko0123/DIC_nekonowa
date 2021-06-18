@@ -1,5 +1,5 @@
 <h1><%= @user.name %>のユーザーページ</h1>
-<%= image_tag @user.image.url %>
+<%= image_tag @user.image.url if @user.image.present? %>
 <%= link_to "プロフィールを編集", edit_user_registration_path %>
 <%= @user.comment %>
 <h2>お気に入り一覧</h2>
@@ -12,3 +12,6 @@
   <%= image_tag post.image.to_s %>
   <%= post.comment %>
 <% end %>
+<br><br>
+<%= link_to 'メッセージ一覧', conversations_path if current_user.id == @user.id %>
+<%

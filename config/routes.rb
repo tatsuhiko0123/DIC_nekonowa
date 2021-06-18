@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:create, :destroy]
   resources :other_posts, only: [:edit, :update]
+  resources :conversations do
+    resources :messages
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
