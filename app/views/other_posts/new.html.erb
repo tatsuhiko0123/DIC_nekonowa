@@ -1,0 +1,44 @@
+<%= form_with(model: @other_post, local: true) do |form| %>
+  <% if @other_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @other_post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @other_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="other_post_vaccination">
+    <%= form.label :ワクチン接種 %>
+    <%= form.select :vaccination, OtherPost.vaccinations.keys %>
+  </div>
+  <div class="other_post_operation">
+    <%= form.label :去勢／避妊 %>
+    <%= form.select :operation, OtherPost.operations.keys %>
+  </div>
+  <div class="other_post_single">
+    <%= form.label :単身者応募 %>
+    <%= form.select :single, OtherPost.singles.keys %>
+  </div>
+  <div class="other_post_old_age">
+    <%= form.label :高齢者応募 %>
+    <%= form.select :old_age, OtherPost.old_ages.keys %>
+  </div>
+  <%= form.label :健康状態 %>
+    <%= form.text_area :health_status, placeholder: "猫の健康状態を入力" %>
+  </div>
+  <div class="other_post_character">
+    <%= form.label :性格・特徴 %>
+    <%= form.text_area :character, placeholder: "猫の性格・特徴を入力" %>
+  </div>
+  <div class="other_post_surrender">
+    <%= form.label :引き渡し条件 %>
+    <%= form.text_area :surrender, placeholder: "猫の引き渡し条件を入力" %>
+  </div>
+  <div class="other_post_health_note">
+    <%= form.label :備考 %>
+    <%= form.text_area :note, placeholder: "備考を入力" %>
+  </div>
+  <%= form.submit "詳細情報を登録する" %>
+<% end %>
