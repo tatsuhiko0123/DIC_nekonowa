@@ -1,40 +1,40 @@
-<%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="post_area">
+  <%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="post_container">
+      <div class="post_image">
+        <%= image_tag(@post.image.url) if @post.image && @post.image.url %><br><br>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+      </div>
+      <div class="post_comment">
+        <%= form.text_area :comment, placeholder: "猫の簡単な紹介を入力", size: "50x8" %>
+      </div>
+    </div><br>
+    <div  class="post_field">
+      <div class="post_breed">
+        <p><%= form.text_field :breed, placeholder: "種類を入力", size: 30 %></p>
+      </div>
+      <div class="post_gender">
+        <p><%= form.select :gender, Post.genders.keys %></p>
+      </div>
+      <div class="post_age">
+        <p><%= form.select :age, Post.ages.keys %></p>
+      </div>
+      <div>
+        <p><%= form.select :prefecture, Post.prefectures.keys %></p>
+      </div>
+      <%= form.submit name="投稿する"%>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
-  <div class="post_comment">
-    <%= form.label :紹介文 %>
-    <%= form.text_area :comment, placeholder: "猫の簡単な紹介を入力" %>
-  </div>
-  <div class="post_breed">
-    <%= form.label :種類 %>
-    <%= form.text_field :breed, placeholder: "種類を入力" %>
-  </div>
-  <div class="post_gender">
-    <%= form.label :性別 %>
-    <%= form.select :gender, Post.genders.keys %>
-  </div>
-  <div class="post_age">
-    <%= form.label :推定年齢 %>
-    <%= form.select :age, Post.ages.keys %>
-  </div>
-  <div>
-    <%= form.label :エリア %><br>
-    <%= form.select :prefecture, Post.prefectures.keys %>
-  </div>
-  <%= form.submit %>
-<% end %>
-<%= link_to '投稿一覧画面に戻る', posts_path %>
+  <%= link_to '投稿一覧画面に戻る', posts_path %>
+</div>

@@ -1,16 +1,11 @@
 <h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-  <div>
-    <%= image_tag post.image.to_s %>
-    <%= post.comment %>
-    <%= post.breed %>
-    <%= post.gender %>
-    <%= post.age %>
-    <%= post.prefecture %>
-    <%= link_to '詳細を確認する', post_path(post.id) %>
-    <%= link_to "投稿を編集する", edit_post_path(post.id) %>
-    <%= link_to '投稿を削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-  </div>
-<% end %><br>
+<div class="index_area">
+  <% @posts.each do |post| %>
+    <div class="index_post">
+      <%= image_tag post.image.to_s, :size =>'200x200' %>
+      <p class="index_comment"><%= link_to post.comment, post_path(post.id) %></p>
+    </div>
+  <% end %><br>
+</div>
 <%= link_to "投稿する", new_post_path %>
 <%= link_to "プロフィール", user_path(current_user.id) %>
