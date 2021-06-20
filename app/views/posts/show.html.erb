@@ -1,6 +1,6 @@
 <h2>ブログ詳細画面</h2><br>
 <div class="post_container">
-  <p><%= image_tag @post.image.url , size: "250x250"%></p>
+  <p><%= image_tag @post.image.url , size: "250x250" %></p>
   <div>
     <span class="post_show_field">
       <% unless @post.user_id == current_user.id %>

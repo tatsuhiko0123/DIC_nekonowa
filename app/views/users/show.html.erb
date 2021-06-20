@@ -1,17 +1,31 @@
-<h1><%= @user.name %>のユーザーページ</h1>
-<%= image_tag @user.image.url if @user.image.present? %>
-<%= link_to "プロフィールを編集", edit_user_registration_path %>
-<%= @user.comment %>
-<h2>お気に入り一覧</h2>
-<% @favorite.each do |post| %>
-  <%= image_tag post.image.to_s %>
-  <%= post.comment %>
-<% end %>
-<h2>投稿一覧</h2>
-<% @users.each do |post| %>
-  <%= image_tag post.image.to_s %>
-  <%= post.comment %>
-<% end %>
-<br><br>
+
+<div class="user_container">
+  <p><%= image_tag @user.image.url if @user.image.present? %></p>
+  <div class="user_field">
+    <span class="user_text"><%= @user.name %>のページ</span>
+    <span><%= link_to "プロフィールを編集", edit_user_registration_path %></span>
+    <p class="box17"><%= @user.comment %></p>
+  </div>
+</div><br>
+
+<h3 class="heading03">お気に入り一覧</h3>
+<div class="user_area">
+  <% @favorite.each do |post| %>
+    <div class="user_post">
+      <%= image_tag post.image.to_s, :size =>'150x150' %>
+      <p class="user_comment"><%= link_to post.comment, post_path(post.id) %></p>
+    </div>     
+  <% end %><br><br>
+</div><br>
+
+<h3 class="heading03">投稿一覧</h3>
+<div class="user_area">
+  <% @users.each do |post| %>
+    <div class="user_post">
+      <%= image_tag post.image.to_s, :size =>'150x150' %>
+      <p class="user_comment"><%= link_to post.comment, post_path(post.id) %></p>
+    </div>     
+  <% end %><br>
+</div>
+
 <%= link_to 'メッセージ一覧', conversations_path if current_user.id == @user.id %>
-<%
