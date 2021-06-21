@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+//------------------- 全体CSS -------------------//
 h1 {
   text-align: center;
 }
@@ -34,9 +36,33 @@ h2 {
 .heading03::before {
 	margin-right: 20px;
 }
+
 .heading03::after {
 	margin-left: 20px;
 }
+
+.nav_btn {
+  margin-left: 30px;
+}
+
+.background {
+  background-image: image-url('header.jpg');
+  height: 100px;
+}
+
+.footer {
+  background-color: #FFEEFF;
+  color: #000;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  bottom: 0;
+  margin-top: 30px;
+}
+
+
+//------------------- postCSS -------------------//
 
 .index_area {
   background-color: rgb(238, 238, 238);     /* 背景色指定 */
@@ -46,9 +72,11 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .index_post {
   margin: 0 5px;
 }
+
 .index_comment {
   width: 200px;
   white-space: nowrap;
@@ -58,14 +86,20 @@ h2 {
   background-color: rgb(255, 255, 255);
 }
 
+.index_btn {
+  margin-left: 30px;
+}
+
 .post_container {
   display:flex;/* flexbox */
   justify-content:center; /* 水平方向 */
   align-items: center;
 }
+
 .form_field {
   margin-bottom: 10px;
 }
+
 .post_image {
   padding-right: 10px;
 }
