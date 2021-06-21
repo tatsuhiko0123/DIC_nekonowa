@@ -19,17 +19,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <span class="navbar-brand"><%= link_to "猫の輪", rails_admin_path %></span>
+      <span class="navbar-brand"><%= link_to "管理画面", rails_admin_path %></span>
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <% if user_signed_in? %>
+              <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
               <span class="nav_btn"><%= link_to "プロフィール", user_path(current_user.id) %></span>
               <span class="nav_btn"><%= link_to "投稿する", new_post_path %></span>
               <span class="nav_btn"><%= link_to "投稿一覧", posts_path %></span>
               <span class="nav_btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></span>
             <% else %>
+              <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
               <span class="nav_btn"><%= link_to "新規アカウント登録", new_user_registration_path %></span>
               <span class="nav_btn"><%= link_to "ログイン", new_user_session_path %></span>
             <% end %>
