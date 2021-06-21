@@ -1,3 +1,71 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user {
+  text-align: center;
+}
+
+.user_container {
+  display:flex;/* flexbox */
+  justify-content:center; /* 水平方向 */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user_field {
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.user_text {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.box17{
+  margin:2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.box17:before, .box17:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+  margin: 0; 
+  padding: 0;
+}
+
+.user_area {
+  background-color: rgb(243, 243, 243);     /* 背景色指定 */
+  padding:  10px;             /* 余白指定 */
+  display: flex;              /* フレックスボックスにする */
+  align-items:stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.user_post {
+  margin: 0 10px;
+}
+.user_comment {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.session_area {
+  text-align: center;
+}
