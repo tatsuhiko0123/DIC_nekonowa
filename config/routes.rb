@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :index]
   root 'users#index'
+  
   resources :posts do
+    resources :other_posts
     collection do
       post :confirm
     end
   end
   resources :favorites, only: [:create, :destroy]
-  resources :other_posts, only: [:edit, :update]
+  
   resources :conversations do
     resources :messages
   end

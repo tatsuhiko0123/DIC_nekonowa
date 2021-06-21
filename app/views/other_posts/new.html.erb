@@ -1,4 +1,4 @@
-<%= form_with(model: @other_post, local: true) do |form| %>
+<%= form_with(model: [@post, @other_post], local: true) do |form| %>
   <% if @other_post.errors.any? %>
     <div id="error_explanation">
       <h2><%= @other_post.errors.count %>件のエラーがあります。</h2>

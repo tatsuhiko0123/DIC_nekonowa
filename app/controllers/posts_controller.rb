@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @other_post = OtherPost.find_by(post_id: @post.id)
   end
 
   def edit

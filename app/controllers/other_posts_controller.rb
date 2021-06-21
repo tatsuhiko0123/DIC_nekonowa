@@ -1,15 +1,21 @@
 class OtherPostsController < ApplicationController
-  before_action :set_other_post, only: [:edit, :update]
+  before_action :set_other_post, only: [:update]
+  before_action :set_post
 
-  def edit
+  def new
+    @other_post = @post.build_other_post
   end
 
-  def update
-    if @other_post.update(other_post_params)
-      redirect_to posts_path(post_id: @post.id), notice: "詳細情報を編集しました！"
+  def create
+    @other_post = @post.build_other_post(other_post_params)
+    if @other_post.save
+      redirect_to posts_path, notice: "詳細情報を追加しました！"
     else
-      render :edit
+      render :new
     end
+  end
+
+  def edit
   end
   
   private
@@ -19,6 +25,11 @@ class OtherPostsController < ApplicationController
   end
 
   def set_other_post
-    @other_post = Post.find(params[:post_id])
+    @other_post = OtherPost.find(params[:id])
   end
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
 end
