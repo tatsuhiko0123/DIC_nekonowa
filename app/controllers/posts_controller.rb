@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.page(params[:page]).per(10)
   end
 
   def new
