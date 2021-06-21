@@ -10,21 +10,48 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "管理画面", rails_admin_path %>
-      <%= link_to "投稿一覧", posts_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規アカウント登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-      
+    <header>
+      <div class="background">〜猫の輪〜</div>
+    </header>
+
+    <nav class="navbar navbar-expand-sm navbar-dark mb-3" style="background-color:rgb(238, 238, 238);">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <span class="navbar-brand"><%= link_to "管理画面", rails_admin_path %></span>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <% if user_signed_in? %>
+              <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
+              <span class="nav_btn"><%= link_to "プロフィール", user_path(current_user.id) %></span>
+              <span class="nav_btn"><%= link_to "投稿する", new_post_path %></span>
+              <span class="nav_btn"><%= link_to "投稿一覧", posts_path %></span>
+              <span class="nav_btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></span>
+            <% else %>
+              <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
+              <span class="nav_btn"><%= link_to "新規アカウント登録", new_user_registration_path %></span>
+              <span class="nav_btn"><%= link_to "ログイン", new_user_session_path %></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>   
+
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
+    
     <% if alert %>
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
+
     <%= yield %>
+
+    <footer class="footer">
+      <p class="copy">&copy;nekonowa</p>
+    </footer>
   </body>
 </html>

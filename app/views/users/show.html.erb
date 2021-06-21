@@ -1,8 +1,10 @@
 <div class="user_container">
   <p><%= image_tag @user.image.url if @user.image.present? %></p>
+  
   <div class="user_field">
     <span class="user_text"><%= @user.name %>のページ</span>
-    <span><%= link_to "プロフィールを編集", edit_user_registration_path %></span>
+    <button type="button" class="btn btn-outline-dark"><%= link_to "プロフィールを編集", edit_user_registration_path %></button>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'メッセージ一覧', conversations_path if current_user.id == @user.id %></button>
     <p class="box17"><%= @user.comment %></p>
   </div>
 </div><br>
@@ -26,5 +28,3 @@
     </div>     
   <% end %><br>
 </div>
-
-<%= link_to 'メッセージ一覧', conversations_path if current_user.id == @user.id %>

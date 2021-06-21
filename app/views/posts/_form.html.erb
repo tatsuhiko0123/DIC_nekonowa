@@ -10,6 +10,7 @@
         </ul>
       </div>
     <% end %>
+
     <div class="post_container">
       <div class="post_image">
         <%= image_tag(@post.image.url) if @post.image && @post.image.url %><br><br>
@@ -20,21 +21,26 @@
         <%= form.text_area :comment, placeholder: "猫の簡単な紹介を入力", size: "50x8" %>
       </div>
     </div><br>
+
     <div  class="post_field">
       <div class="post_breed">
         <p><%= form.text_field :breed, placeholder: "種類を入力", size: 30 %></p>
       </div>
+
       <div class="post_gender">
         <p><%= form.select :gender, Post.genders.keys %></p>
       </div>
+
       <div class="post_age">
         <p><%= form.select :age, Post.ages.keys %></p>
       </div>
+
       <div>
         <p><%= form.select :prefecture, Post.prefectures.keys %></p>
       </div>
       <%= form.submit name="投稿する"%>
     </div>
-  <% end %>
-  <%= link_to '投稿一覧画面に戻る', posts_path %>
+  <% end %><br>
+  
+  <button type="button" class="btn btn-outline-dark"><%= link_to '投稿一覧画面に戻る', posts_path %></button>
 </div>

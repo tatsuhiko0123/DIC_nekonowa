@@ -6,6 +6,9 @@
       <p class="index_comment"><%= link_to post.comment, post_path(post.id) %></p>
     </div>
   <% end %><br>
+</div><br><br>
+<div class="index_btn">
+  <button type="button" class="btn btn-outline-dark"><%= link_to "投稿する", new_post_path %></button>
+  <button type="button" class="btn btn-outline-dark"><%= link_to "プロフィール", user_path(current_user.id) %></button>
 </div>
-<%= link_to "投稿する", new_post_path %>
-<%= link_to "プロフィール", user_path(current_user.id) %>
+
