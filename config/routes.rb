@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  resources :users, only: [:show]
-  root 'posts#index'
+  resources :users, only: [:show, :index]
+  root 'users#index'
   resources :posts do
     collection do
       post :confirm

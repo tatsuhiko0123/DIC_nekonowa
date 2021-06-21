@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :baria_user, only: [:edit, :destroy, :update]
+
   def index
     @posts = Post.all
   end
@@ -57,5 +59,11 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def baria_user
+    unless Post.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to posts_path(current_user)
+    end
   end
 end
