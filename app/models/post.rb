@@ -24,7 +24,7 @@ class Post < ApplicationRecord
      沖縄県:47
   }, _prefix: true
 
-  enum gender:{ "性別を選択":0,♂　オス:1,♀　メス:2 }, _prefix: true
+  enum gender:{ "性別を選択":0,♂　オス:1,♀　メス:2,不明:3 }, _prefix: true
 
   enum age:{
     "推定年齢を選択":0,
