@@ -3,13 +3,15 @@
   
   <div class="user_field">
     <span class="user_text"><%= @user.name %>のページ</span>
-    <button type="button" class="btn btn-outline-dark"><%= link_to "プロフィールを編集", edit_user_registration_path %></button>
-    <button type="button" class="btn btn-outline-dark"><%= link_to 'メッセージ一覧', conversations_path if current_user.id == @user.id %></button>
+    <% if current_user.id == @user.id %>
+      <button type="button" class="btn btn-outline-dark"><%= link_to "プロフィールを編集", edit_user_registration_path %></button>
+      <button type="button" class="btn btn-outline-dark"><%= link_to 'メッセージ一覧', conversations_path  %></button>
+    <% end %>
     <p class="box17"><%= @user.comment %></p>
   </div>
 </div><br>
 
-<h3 class="heading03">お気に入り一覧</h3>
+<h3 class="heading03">気になる一覧</h3>
 <div class="user_area">
   <% @favorite.each do |post| %>
     <div class="user_post">

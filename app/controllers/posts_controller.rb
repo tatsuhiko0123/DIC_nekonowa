@@ -37,8 +37,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    redirect_to posts_path if @post.user != current_user
     if @post.update(post_params)
-      redirect_to posts_path, notice: "投稿を編集しました！"
+      redirect_to post_path(@post.id), notice: "投稿を編集しました！"
     else
       render :edit
     end
