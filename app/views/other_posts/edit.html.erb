@@ -9,9 +9,9 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="other_post_area">
-    <h2>詳細情報の追加</h2>
+    <h2>詳細情報の編集</h2>
     <p>
       <%= form.select :vaccination, OtherPost.vaccinations.keys %>
       <%= form.select :operation, OtherPost.operations.keys %>
@@ -36,6 +36,6 @@
       <%= form.label :備考 %><br>
       <%= form.text_area :note, size: "45x2" %>
     </div><br>
-    <%= form.submit "詳細情報を追加する" %>
+    <%= form.submit "詳細情報を更新する" %>
   </div>
 <% end %>

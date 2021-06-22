@@ -1,4 +1,4 @@
-<div class="post_area"><h2>ブログ詳細画面</h2></div>
+<div class="post_area"><h2>猫のステータス</h2></div>
 
 <div class="post_container">
   <p><%= image_tag @post.image.url , size: "250x250" %></p>
@@ -13,6 +13,7 @@
         <% end %>
       <% end %>
     </span>
+    
     <button type="button" class="btn btn-outline-dark">
       <%= link_to "投稿を編集する", edit_post_path(@post.id) %>
     </button>
@@ -51,11 +52,18 @@
   </table><br><br>
 
   <h3 class="heading03">詳細情報</h3>
-  <button type="button" class="btn btn-outline-dark">
-    <%= link_to '詳細情報を追加する', new_post_other_post_path(@post) %>
-  </button><br><br>
+    <% if @other_post.blank? %>
+      <button type="button" class="btn btn-outline-dark">
+        <%= link_to '詳細情報を追加する', new_post_other_post_path(@post) %>
+      </button><br><br>
+    <% else %>
+      <button type="button" class="btn btn-outline-dark">
+        <%= link_to '詳細情報を編集する', edit_post_other_post_path(@post, @other_post) %>
+      </button><br><br>
+    <% end %>
 
-  <% if  @other_post.present? %>
+
+  <% if @other_post.present? %>
     <table class="post_text">
       <tr>
         <th>ワクチン接種</th>

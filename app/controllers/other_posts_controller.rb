@@ -1,5 +1,5 @@
 class OtherPostsController < ApplicationController
-  before_action :set_other_post, only: [:update]
+  before_action :set_other_post, only: [:update, :edit]
   before_action :set_post
 
   def new
@@ -16,6 +16,14 @@ class OtherPostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @other_post.update(other_post_params)
+      redirect_to posts_path, notice: "詳細情報を編集しました！"
+    else
+      render :edit
+    end
   end
   
   private

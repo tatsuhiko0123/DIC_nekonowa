@@ -48,7 +48,22 @@ h2 {
 .background {
   background-image: image-url('header.jpg');
   height: 100px;
+  position: relative;
 }
+
+.background p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 3em;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  }
 
 .footer {
   background-color: #ffeeffd3;
@@ -65,9 +80,9 @@ h2 {
 //------------------- postCSS -------------------//
 
 .index_area {
-  background-color: rgb(238, 238, 238);     /* 背景色指定 */
-  padding:  10px;             /* 余白指定 */
-  display: flex;              /* フレックスボックスにする */
+  background-color: rgb(238, 238, 238); 
+  padding:  10px; 
+  display: flex;
   align-items:stretch;
   flex-wrap: wrap;
   justify-content: center;
@@ -94,8 +109,8 @@ h2 {
 }
 
 .post_container {
-  display:flex;/* flexbox */
-  justify-content:center; /* 水平方向 */
+  display:flex;
+  justify-content:center;
   align-items: center;
 }
 
@@ -116,43 +131,43 @@ h2 {
 }
 
 table.post_text {
-  border-collapse: collapse;  /* セルの線を重ねる */
+  border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
 }
 
 .post_text th,td {
-  padding: 5px 10px;          /* 余白指定 */
+  padding: 5px 10px;
 }
 
 .post_text th {
-  background-color: #FFDDFF;  /* 背景色指定 */
-  color:  #000;               /* 文字色指定 */
-  font-weight:  normal;       /* 文字の太さ指定 */
-  position:  relative;        /* 位置指定 */
-  z-index: 10;                /* 重なり調整 */
+  background-color: #FFDDFF;
+  color:  #000;
+  font-weight:  normal;
+  position:  relative;
+  z-index: 10;
 }
 
 .post_text td {
-  background-color:  #FFEEFF; /* 背景色指定 */
+  background-color:  #FFEEFF;
   padding-left: 100px; 
-  padding-right: 100px;        /* 余白指定 */
+  padding-right: 100px;
 }
 
 .post_text th::after {
-  content:'';                 /* 空の要素を作る */
-  position:  absolute;        /* 位置指定 */
-  height: 24px;               /* 高さ指定 */
-  width: 24px;                /* 幅指定 */
-  background-color: #FFDDFF;  /* 背景色指定 */
-  transform:  rotate(45deg);  /* 要素を回転 */
-  top: 5px;                   /* 位置指定 */
-  right: -12px;               /* 位置指定 */
-  z-index:  -1;               /* 重なり調整 */
+  content:'';
+  position:  absolute;
+  height: 24px;
+  width: 24px;
+  background-color: #FFDDFF;
+  transform:  rotate(45deg);
+  top: 5px;
+  right: -12px;
+  z-index:  -1;
 }
 
 tr {
-  border-bottom:  solid #fff; /* 線指定 */
+  border-bottom:  solid #fff;
 }
 
 table.post_text_area {
