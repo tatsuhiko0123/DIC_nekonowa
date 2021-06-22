@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :comment])
   end
 
+  def after_sign_in_path_for(resource)
+    posts_path
+  end
+
   def after_sign_out_path_for(resource)
     users_path # ログアウト後に遷移するpathを設定
   end
