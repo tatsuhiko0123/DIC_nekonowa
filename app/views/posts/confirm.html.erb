@@ -1,5 +1,5 @@
-<h2>以下の内容で、送信する。</h2>
 <div class="post_area">
+  <h2>以下の内容で、送信する。</h2>
   <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
     <%= form.hidden_field :image_cache %>
     <%= form.hidden_field :comment %>
@@ -7,6 +7,7 @@
     <%= form.hidden_field :gender %>
     <%= form.hidden_field :age %>
     <%= form.hidden_field :prefecture %>
+    <%= form.hidden_field :address %>
     <%= image_tag(@post.image.url) if @post.image && @post.image.url %><br><br>
     <table class="post_text_area">
       <th>紹介文</th>
@@ -27,6 +28,7 @@
         <td><%= @post.prefecture %></td>
       </tr>
     </table><br><br>
+    <p>保護した場所：<%= @post.address %></p>
     <%= form.submit "投稿する" %>
   <% end %><br>
 

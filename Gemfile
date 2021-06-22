@@ -20,6 +20,10 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'dotenv-rails'
 gem 'kaminari'
+gem "gmaps4rails"
+gem "geocoder"
+gem "gon"
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
