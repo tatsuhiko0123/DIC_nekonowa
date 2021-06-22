@@ -53,6 +53,10 @@
   align-items:stretch;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1050px;
+  margin: 0 auto;
+  height: 190px;
+  overflow-y: auto;
 }
 .user_post {
   margin: 0 10px;

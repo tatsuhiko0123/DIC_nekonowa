@@ -38,6 +38,11 @@
       <div>
         <p><%= form.select :prefecture, Post.prefectures.keys %></p>
       </div>
+
+      <div>
+        <%= form.text_field :address, placeholder: "保護した場所", size: 30 %>
+      </div><br>
+
       <%= form.submit name="投稿する"%>
     </div>
   <% end %><br>

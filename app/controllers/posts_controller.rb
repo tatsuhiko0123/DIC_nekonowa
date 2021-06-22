@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.page(params[:page]).per(10)
   end
 
   def new
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   end
   private
   def post_params
-    params.require(:post).permit(:image, :image_cache, :comment, :breed, :gender, :age, :prefecture)
+    params.require(:post).permit(:image, :image_cache, :comment, :breed, :gender, :age, :prefecture, :address, :latitude, :longitude)
   end
 
   def set_post

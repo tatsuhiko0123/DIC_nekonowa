@@ -71,6 +71,8 @@ h2 {
   align-items:stretch;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .index_post {
@@ -88,6 +90,7 @@ h2 {
 
 .index_btn {
   margin-left: 30px;
+  text-align: center;
 }
 
 .post_container {
