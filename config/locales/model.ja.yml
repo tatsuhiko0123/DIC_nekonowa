@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      user: ユーザー
+      other_post: 詳細情報投稿
+    attributes:
+      post:
+        image: 画像
+        comment: 紹介文
+        breed: 種類
+        gender: 性別
+        age: 推定年齢
+        prefecture: エリア
+        address: 保護した場所
+      other_post:
+        vaccination: ワクチン接種
+        operation: 去勢／避妊
+        single: 単身者応募
+        old_age: 高齢者応募
+        health_status: 健康状態
+        character: 性格／特徴
+        surrender: 引き渡し条件
+        note: 備考
+      user:
+        image: 画像
+        name: 名前
+        comment: 紹介文
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
