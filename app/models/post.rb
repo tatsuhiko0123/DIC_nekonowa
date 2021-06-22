@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   validates :image, presence: true
   validates :comment, presence: true
 
+  scope :search_prefecture, -> (search_prefecture) { where(prefecture: search_prefecture)}
+
   enum prefecture:{
      "エリアを選択":0,
      北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
