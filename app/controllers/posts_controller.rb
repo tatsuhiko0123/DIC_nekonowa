@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
 
   def index
-    if params[:post]
-      @posts = Post.search_prefecture(params[:post][:prefecture])
+    if params[:search_prefecture].present?
+      @posts = Post.search_prefecture(params[:search_prefecture])
     else
       @posts = Post.all
-    end 
-    @posts = Post.all.page(params[:page]).per(10)
+    end
+    @posts = @posts.page(params[:page]).per(10)
   end
 
   def new
