@@ -3,23 +3,26 @@
 <div class="post_container">
   <p><%= image_tag @post.image.url , size: "250x250" %></p>
 
-  <div>
-    <span class="post_show_field">
+  <div class="post_show_field">
+    <span>
+      <p>掲載日：<%= @post.created_at.strftime('%Y / %m / %d') %></p>
       <% unless @post.user_id == current_user.id %>
         <% if @favorite.present? %>
-          <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+          <%= link_to '気になる一覧から削除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
         <% else %>
-          <%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
+          <%= link_to '気になる一覧に登録', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
         <% end %>
       <% end %>
     </span>
-    
-    <button type="button" class="btn btn-outline-dark">
-      <%= link_to "投稿を編集する", edit_post_path(@post.id) %>
-    </button>
-    <button type="button" class="btn btn-outline-dark">
-      <%= link_to '投稿を削除する', post_path(@post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-    </button>
+
+    <% if @post.user == current_user %>
+      <button type="button" class="btn btn-outline-dark">
+        <%= link_to "投稿を編集する", edit_post_path(@post.id) %>
+      </button>
+      <button type="button" class="btn btn-outline-dark">
+        <%= link_to '投稿を削除する', post_path(@post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+      </button>
+    <% end %>
   </div>
 </div><br>
 
@@ -52,6 +55,7 @@
   </table><br><br>
 
   <h3 class="heading03">詳細情報</h3>
+  <% if @post.user == current_user %>
     <% if @other_post.blank? %>
       <button type="button" class="btn btn-outline-dark">
         <%= link_to '詳細情報を追加する', new_post_other_post_path(@post) %>
@@ -61,7 +65,7 @@
         <%= link_to '詳細情報を編集する', edit_post_other_post_path(@post, @other_post) %>
       </button><br><br>
     <% end %>
-
+  <% end %>
 
   <% if @other_post.present? %>
     <table class="post_text">
@@ -103,25 +107,27 @@
   <% end %>
   <br>
   <hr>
-  <h5>保護した場所：<%= @post.address %></h5>
+  <% if @post.address.present? %>
+    <h5>保護した場所：<%= @post.address %></h5>
 
-  <div id="map" style='width: 100%; height: 300px;'></div>
- 
-  <script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([
-        {
-          "lat": <%= @post.latitude %>,
-          "lng": <%= @post.longitude %>,
-		  "infowindow": '<p><%= @post.address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@post.latitude},#{@post.longitude}&iwloc=J",target: "_blank" %></p>'
-        }
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(17);
-    });
-  </script><br>
+    <div id="map" style='width: 100%; height: 300px;'></div>
+  
+    <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers([
+          {
+            "lat": <%= @post.latitude %>,
+            "lng": <%= @post.longitude %>,
+        "infowindow": '<p><%= @post.address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@post.latitude},#{@post.longitude}&iwloc=J",target: "_blank" %></p>'
+          }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(17);
+      });
+    </script><br>
+  <% end %>
 
   <button type="button" class="btn btn-outline-dark">
     <%= link_to '投稿一覧画面に戻る', posts_path %>

@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
 
   def index
-    @posts = Post.all.page(params[:page]).per(10)
+    if params[:search_prefecture].present?
+      @posts = Post.search_prefecture(params[:search_prefecture])
+    else
+      @posts = Post.all
+    end
+    @posts = @posts.page(params[:page]).per(10)
   end
 
   def new
@@ -37,8 +42,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    redirect_to posts_path if @post.user != current_user
     if @post.update(post_params)
-      redirect_to posts_path, notice: "投稿を編集しました！"
+      redirect_to post_path(@post.id), notice: "投稿を編集しました！"
     else
       render :edit
     end

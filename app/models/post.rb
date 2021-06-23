@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   validates :image, presence: true
   validates :comment, presence: true
 
+  scope :search_prefecture, -> (search_prefecture) { where(prefecture: search_prefecture)}
+
   enum prefecture:{
      "エリアを選択":0,
      北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -22,7 +24,7 @@ class Post < ApplicationRecord
      沖縄県:47
   }, _prefix: true
 
-  enum gender:{ "性別を選択":0,♂　オス:1,♀　メス:2 }, _prefix: true
+  enum gender:{ "性別を選択":0,♂　オス:1,♀　メス:2,不明:3 }, _prefix: true
 
   enum age:{
     "推定年齢を選択":0,
