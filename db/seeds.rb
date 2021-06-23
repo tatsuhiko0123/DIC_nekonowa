@@ -8,7 +8,7 @@
 
 # 管理者ユーザー ユーザー1
 user1 = User.create!(
-  image: open("#{Rails.root}/db/fixtures/1.jpg"), 
+  image: File.open("./app/assets/images/1.jpg"), 
   name: "goma", 
   comment: "ゴマです", 
   email: "goma@gmail.com", 
@@ -19,7 +19,7 @@ user1 = User.create!(
 
 # ユーザー2
 user2 = User.create!(
-  image: open("#{Rails.root}/db/fixtures/2.jpg"), 
+  image: File.open("./app/assets/images/2.jpg"), 
   name: "kuro", 
   comment: "クロです", 
   email: "kuro@gmail.com", 
@@ -30,7 +30,7 @@ user2 = User.create!(
 
 # ユーザー3
 user3 = User.create!(
-  image: open("#{Rails.root}/db/fixtures/3.jpg"),
+  image: File.open("./app/assets/images/3.jpg"),
   name: "tora",
   comment: "トラです",
   email: "tora@gmail.com",
@@ -41,7 +41,7 @@ user3 = User.create!(
 
 # ユーザー4
 user4 = User.create!(
-  image: open("#{Rails.root}/db/fixtures/4.jpg"),
+  image: File.open("./app/assets/images/4.jpg"),
   name: "natsu",
   comment: "ナツです",
   email: "natsu@gmail.com",
@@ -52,7 +52,7 @@ user4 = User.create!(
 
 # ユーザー5
 user5 = User.create!(
-  image: open("#{Rails.root}/db/fixtures/5.jpg"),
+  image: File.open("./app/assets/images/5.jpg"),
   name: "cocoa",
   comment: "ココアです",
   email: "cocoa@gmail.com",
@@ -63,7 +63,7 @@ user5 = User.create!(
 
 # ユーザー1
 post1 = Post.create!(
-  image: open("#{Rails.root}/db/fixtures/6.jpg"),
+  image: File.open("./app/assets/images/6.jpg"),
   comment: "ゴマ",
   breed: 1,
   gender: 1,
@@ -75,7 +75,7 @@ post1 = Post.create!(
 
 # ユーザー2
 post2 = Post.create!(
-  image: open("#{Rails.root}/db/fixtures/7.jpg"),
+  image: File.open("./app/assets/images/7.jpg"),
   comment: "クロ",
   breed: 1,
   gender: 1,
@@ -87,7 +87,7 @@ post2 = Post.create!(
 
 # ユーザー3
 post3 = Post.create!(
-  image: open("#{Rails.root}/db/fixtures/8.jpg"),
+  image: File.open("./app/assets/images/8.jpg"),
   comment: "トラ",
   breed: 1,
   gender: 1,
@@ -99,7 +99,7 @@ post3 = Post.create!(
 
 # ユーザー4
 post4 = Post.create!(
-  image: open("#{Rails.root}/db/fixtures/9.jpg"),
+  image: File.open("./app/assets/images/9.jpg"),
   comment: "ナツ",
   breed: 1,
   gender: 1,
@@ -111,7 +111,7 @@ post4 = Post.create!(
 
 # ユーザー5
 post5 = Post.create!(
-  image: open("#{Rails.root}/db/fixtures/10.jpg"),
+  image: File.open("./app/assets/images/10.jpg"),
   comment: "ココア",
   breed: 1,
   gender: 1,
