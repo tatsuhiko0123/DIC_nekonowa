@@ -19,7 +19,7 @@
 </div><br><br>
 <div class="index_btn">
   <div><%= paginate @posts %></div>
-  <%= link_to "投稿する", new_post_path, class: "btn btn-outline-dark" %>
+  <%= link_to "新規投稿", new_post_path, class: "btn btn-outline-dark" %>
   <%= link_to "プロフィール", user_path(current_user.id), class: "btn btn-outline-dark" %>
 </div>
 

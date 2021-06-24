@@ -17,7 +17,7 @@
 
     <% if @post.user == current_user %>
       <%= link_to "投稿を編集する", edit_post_path(@post.id), class: "btn btn-outline-dark" %>
-      <%= link_to '投稿を削除する', post_path(@post.id), class: "btn btn-outline-dark" method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+      <%= link_to '投稿を削除する', post_path(@post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }, class: "btn btn-outline-dark" %>
     <% end %>
   </div>
 </div><br>
@@ -25,7 +25,7 @@
 <div class="post_area">
   <p>
     投稿者: <%= link_to "#{@post.user.name}", user_path(@post.user) %>
-    <%= link_to 'この投稿者にメッセージ', conversations_path(sender_id: current_user.id, recipient_id: @post.user.id),, class: "btn btn-outline-dark" method: :post %>
+    <%= link_to 'この投稿者にメッセージ', conversations_path(sender_id: current_user.id, recipient_id: @post.user.id), method: :post, class: "btn btn-outline-dark" %>
   </p>
   <h3 class="heading03">基本情報</h3>
   <table class="post_text_area">
