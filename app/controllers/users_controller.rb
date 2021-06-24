@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit]
   before_action :authenticate_user!
 
+  def index
+  end
+
   def show
     @favorite = current_user.favorite_posts
     @users = current_user.posts

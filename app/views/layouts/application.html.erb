@@ -21,7 +21,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <span class="navbar-brand"><%= link_to "管理画面", rails_admin_path %></span>
+      <%# <% if current_user.admin == true %> %>
+       <span class="navbar-brand"><%= link_to "管理画面", rails_admin_path %></span>
+      <%# <% end %> %>
+      <%# <% binding.irb %> %>
+      
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
@@ -29,6 +33,7 @@
             <% if user_signed_in? %>
               <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
               <span class="nav_btn"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></span>
+              <span class="nav_btn"><%= link_to 'ゲストログイン（管理者）', users_admin_guest_sign_in_path, method: :post %></span>
               <span class="nav_btn"><%= link_to "プロフィール", user_path(current_user.id) %></span>
               <span class="nav_btn"><%= link_to "投稿する", new_post_path %></span>
               <span class="nav_btn"><%= link_to "投稿一覧", posts_path %></span>
@@ -36,6 +41,7 @@
             <% else %>
               <span class="nav_btn"><%= link_to "トップページ", users_path %></span>
               <span class="nav_btn"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></span>
+              <span class="nav_btn"><%= link_to 'ゲストログイン（管理者）', users_admin_guest_sign_in_path, method: :post %></span>
               <span class="nav_btn"><%= link_to "新規アカウント登録", new_user_registration_path %></span>
               <span class="nav_btn"><%= link_to "ログイン", new_user_session_path %></span>
             <% end %>

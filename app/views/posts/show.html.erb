@@ -16,12 +16,8 @@
     </span>
 
     <% if @post.user == current_user %>
-      <button type="button" class="btn btn-outline-dark">
-        <%= link_to "投稿を編集する", edit_post_path(@post.id) %>
-      </button>
-      <button type="button" class="btn btn-outline-dark">
-        <%= link_to '投稿を削除する', post_path(@post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-      </button>
+      <%= link_to "投稿を編集する", edit_post_path(@post.id), class: "btn btn-outline-dark" %>
+      <%= link_to '投稿を削除する', post_path(@post.id), class: "btn btn-outline-dark" method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
     <% end %>
   </div>
 </div><br>
@@ -29,9 +25,7 @@
 <div class="post_area">
   <p>
     投稿者: <%= link_to "#{@post.user.name}", user_path(@post.user) %>
-    <button type="button" class="btn btn-outline-dark">
-      <%= link_to 'この投稿者にメッセージ', conversations_path(sender_id: current_user.id, recipient_id: @post.user.id), method: :post %>
-    </button>
+    <%= link_to 'この投稿者にメッセージ', conversations_path(sender_id: current_user.id, recipient_id: @post.user.id),, class: "btn btn-outline-dark" method: :post %>
   </p>
   <h3 class="heading03">基本情報</h3>
   <table class="post_text_area">
@@ -57,13 +51,9 @@
   <h3 class="heading03">詳細情報</h3>
   <% if @post.user == current_user %>
     <% if @other_post.blank? %>
-      <button type="button" class="btn btn-outline-dark">
-        <%= link_to '詳細情報を追加する', new_post_other_post_path(@post) %>
-      </button><br><br>
+      <%= link_to '詳細情報を追加する', new_post_other_post_path(@post), class: "btn btn-outline-dark" %><br><br>
     <% else %>
-      <button type="button" class="btn btn-outline-dark">
-        <%= link_to '詳細情報を編集する', edit_post_other_post_path(@post, @other_post) %>
-      </button><br><br>
+      <%= link_to '詳細情報を編集する', edit_post_other_post_path(@post, @other_post), class: "btn btn-outline-dark" %><br><br>
     <% end %>
   <% end %>
 
@@ -129,9 +119,7 @@
     </script><br>
   <% end %>
 
-  <button type="button" class="btn btn-outline-dark">
-    <%= link_to '投稿一覧画面に戻る', posts_path %>
-  </button>
+  <%= link_to '投稿一覧画面に戻る', posts_path, class: "btn btn-outline-dark" %>
 </div>
 
 
