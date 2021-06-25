@@ -8,7 +8,7 @@ FactoryBot.define do
     character { "おっとり" }
     surrender { "自転車オッケー" }
     note { "特に無し" }
-    association :post
+    # association :post, factory: :post2
   end
 
   factory :other_post2, class: "OtherPost" do
@@ -20,7 +20,7 @@ FactoryBot.define do
     character { "天邪鬼" }
     surrender { "徒歩でも可" }
     note { "特になし" }
-    association :post
+    # association :post
   end
 
   factory :other_post3, class: "OtherPost" do
@@ -32,6 +32,6 @@ FactoryBot.define do
     character { "暴れん坊" }
     surrender { "車で来れる方" }
     note { "なし" }
-    association :post
+    # association :post
   end
 end

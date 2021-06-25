@@ -18,7 +18,7 @@ FactoryBot.define do
     age { 1 }
     prefecture { 2 }
     address { "茨城県つくばみらい市福田195" }
-    association :user
+    association :user, factory: :user2
   end
 
   factory :post3, class: "Post" do
@@ -29,6 +29,6 @@ FactoryBot.define do
     age { 1 }
     prefecture { 1 }
     address { "茨城県つくばみらい市福田195" }
-    association :user
+    association :user, factory: :user3
   end
 end
