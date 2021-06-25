@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :admin_user do
-    image {"./app/assets/images/1.JPG"}
+    image { File.open("./app/assets/images/1.JPG") }
     name { "goma" }
     comment {"ゴマです"}
     email { "goma@gmail.com" }
@@ -8,11 +8,20 @@ FactoryBot.define do
     admin { "true" }
   end
 
-  factory :user do ,class: User do
-    image {"./app/assets/images/2.JPG"}
+  factory :user, class: User do
+    image { File.open("./app/assets/images/2.JPG") }
     name { "kuro" }
     comment {"クロです"}
     email { "kuro@gmail.com" }
+    password { "111111" }
+    admin { "false" }
+  end
+
+  factory :user2, class: User do
+    image { File.open("./app/assets/images/3.JPG") }
+    name { "tora" }
+    comment {"トラです"}
+    email { "tora@gmail.com" }
     password { "111111" }
     admin { "false" }
   end

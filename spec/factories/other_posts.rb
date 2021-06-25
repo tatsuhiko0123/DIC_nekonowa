@@ -11,7 +11,7 @@ FactoryBot.define do
     association :post
   end
 
-  factory :other_post2 do, class: "OtherPost" do
+  factory :other_post2, class: "OtherPost" do
     vaccination { 2 }
     operation { 2 }
     single { 2 }
@@ -23,7 +23,7 @@ FactoryBot.define do
     association :post
   end
 
-  factory :other_post3 do, class: "OtherPost" do
+  factory :other_post3, class: "OtherPost" do
     vaccination { 1 }
     operation { 2 }
     single { 1 }
