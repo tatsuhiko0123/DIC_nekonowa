@@ -73,3 +73,45 @@
 .session_area {
   text-align: center;
 }
+
+//----------------------- TOPページ -----------------------//
+body {
+  font-size: 16px;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 132vh;
+  background-image: image-url('top.jpg');
+  background-size:contain;
+  background-repeat:  no-repeat;
+}
+
+.p1 {
+  margin: 0;
+  position: absolute;
+  // top: calc(50% - 0.5em);
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  font-size: 45px;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 5px 5px 0 rgb(172, 172, 172);
+}
+
+.p2 {
+  margin: 0;
+  position: absolute;
+  top: calc(24% - 0.5em);
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  padding: 2rem 0;
+  text-align: center;
+}
