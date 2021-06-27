@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_one :other_post, dependent: :destroy
   accepts_nested_attributes_for :other_post, update_only: true
   has_many :favorites, dependent: :destroy
-  has_many :favorite_users, through: :favorites, source: :user
+  has_many :favorite_users, through: :favorites, source: :user, dependent: :destroy
 
   validates :image, presence: true
   validates :comment, presence: true

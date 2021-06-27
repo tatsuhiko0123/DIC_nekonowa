@@ -31,4 +31,18 @@ describe '投稿モデルテスト', type: :model do
       end
     end
   end
+
+  describe 'scope機能' do
+    context '検索項目が正しい場合' do
+      it '検索できる' do
+        expect(Post.search_prefecture('北海道')).to include(post)
+      end
+    end
+
+    context '検索項目が間違っている場合' do
+      it '検索できない' do
+        expect(Post.search_prefecture('青森県')).to_not include(post)
+      end
+    end
+  end
 end

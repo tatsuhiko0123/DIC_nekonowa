@@ -34,6 +34,38 @@ RSpec.describe '投稿機能', type: :system do
       end
     end
 
+    context '投稿作成した際に画像が登録されていない場合' do
+      it '新規投稿できない' do
+        click_on '新規投稿', match: :first
+        sleep(0.5)
+        fill_in :post_comment, with: "クロ"
+        fill_in :post_breed, with: "雑種"
+        find("#post_gender").find("option[value='♂　オス']").select_option
+        find("#post_age").find("option[value='１週間']").select_option
+        find("#post_prefecture").find("option[value='北海道']").select_option
+        fill_in :post_address, with: "茨城県つくばみらい市福田195"
+        click_on '投稿する'
+        expect(page).to have_content '画像を入力してください'
+      end
+    end
+
+    context '投稿作成した際にコメントが登録されていない場合' do
+      it '新規投稿できない' do
+        click_on '新規投稿', match: :first
+        sleep(0.5)
+        attach_file :post_image, "./app/assets/images/1.JPG"
+        fill_in :post_comment, with: ""
+        fill_in :post_breed, with: "雑種"
+        find("#post_gender").find("option[value='♂　オス']").select_option
+        find("#post_age").find("option[value='１週間']").select_option
+        find("#post_prefecture").find("option[value='北海道']").select_option
+        fill_in :post_address, with: "茨城県つくばみらい市福田195"
+        click_on '投稿する'
+        # binding.irb
+        expect(page).to have_content '紹介文を入力してください'
+      end
+    end
+
     context '投稿作成に失敗した場合' do
       it '画面遷移せずそのまま新規投稿画面にいること' do
         click_on '新規投稿', match: :first

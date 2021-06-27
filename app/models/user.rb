@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :favorite_posts, through: :favorites, source: :post
+  has_many :favorite_posts, through: :favorites, source: :post, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15 }
 
