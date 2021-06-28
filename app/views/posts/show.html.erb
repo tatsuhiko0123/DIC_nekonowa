@@ -25,7 +25,9 @@
 <div class="post_area">
   <p>
     投稿者: <%= link_to "#{@post.user.name}", user_path(@post.user) %>
+    <% unless @post.user_id == current_user.id %>
     <%= link_to 'この投稿者にメッセージ', conversations_path(sender_id: current_user.id, recipient_id: @post.user.id), method: :post, class: "btn btn-outline-dark" %>
+    <% end %>
   </p>
   <h3 class="heading03">基本情報</h3>
   <table class="post_text_area">
