@@ -78,31 +78,32 @@
 body {
   font-size: 16px;
 }
+.users_index .main_content {
+  padding: 0;
+}
 
 .full {
-  position: relative;
   width: 100%;
-  min-height: 132vh;
   background-image: image-url('top.jpg');
-  background-size:contain;
+  background-position: center bottom;
+  background-size:cover;
   background-repeat:  no-repeat;
+  padding: 40px 0 500px;
 }
 
 .p1 {
   margin: 0;
-  position: absolute;
-  // top: calc(50% - 0.5em);
   width: 100%;
   text-align: center;
   line-height: 1;
   font-size: 45px;
   font-family: "Montserrat", sans-serif;
   text-shadow: 5px 5px 0 rgb(172, 172, 172);
+  margin-bottom: 40px;
 }
 
 .p2 {
   margin: 0;
-  position: absolute;
   top: calc(24% - 0.5em);
   width: 100%;
   text-align: center;

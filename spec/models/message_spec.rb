@@ -11,5 +11,11 @@ RSpec.describe Message, type: :model do
     it 'メッセージが作成できる' do
       expect(message).to be_valid
     end
+
+    context 'メッセージが空の場合'
+    it 'バリデーションエラーとなる' do
+      message.body = ""
+      expect(message).not_to be_valid
+    end
   end
 end
