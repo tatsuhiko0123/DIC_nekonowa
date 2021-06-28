@@ -17,14 +17,12 @@ RSpec.describe 'Admin', type: :system do
       fill_in :user_email, with: "goma@gmail.com"
       fill_in :user_password, with: "111111"
       click_button 'ログイン'
-      # binding.irb
       click_on '管理画面'
     end
 
     context '管理者の場合,' do
       it '管理者ページにアクセスできて投稿の編集ができる。' do
         expect(current_path).to eq rails_admin_path
-        # binding.irb
         find('.nav-pills').find_link('投稿').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
         click_button '保存'
@@ -37,7 +35,6 @@ RSpec.describe 'Admin', type: :system do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('投稿').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('削除').click
-        # binding.irb
         click_button('実行する')
         expect(page).to have_content '投稿の削除に成功しました'
       end
@@ -47,7 +44,6 @@ RSpec.describe 'Admin', type: :system do
       it 'お気に入りを削除することができる。' do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('Favorite').click
-        # binding.irb
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(7)').find(".list-inline").find_link('削除').click
         click_button('実行する')
         expect(page).to have_content 'Favoriteの削除に成功しました'
@@ -59,7 +55,6 @@ RSpec.describe 'Admin', type: :system do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('ユーザー').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
-        # binding.irb
         click_button '保存'
         expect(page).to have_content 'ユーザーの更新に成功しました'
       end
@@ -81,7 +76,6 @@ RSpec.describe 'Admin', type: :system do
         find('.nav-pills').find_link('Message').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
         click_button '保存'
-        # binding.irb
         expect(page).to have_content 'Messageの更新に成功しました'
       end
     end
@@ -92,7 +86,6 @@ RSpec.describe 'Admin', type: :system do
         find('.nav-pills').find_link('Message').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('削除').click
         click_button '実行する'
-        # binding.irb
         expect(page).to have_content 'Messageの削除に成功しました'
       end
     end
@@ -103,7 +96,6 @@ RSpec.describe 'Admin', type: :system do
         find('.nav-pills').find_link('詳細情報投稿').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
         click_button '保存'
-        # binding.irb
         expect(page).to have_content '詳細情報投稿の更新に成功しました'
       end
     end
@@ -113,7 +105,6 @@ RSpec.describe 'Admin', type: :system do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('詳細情報投稿').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('削除').click
-        # binding.irb
         click_button '実行する'
         expect(page).to have_content '詳細情報投稿の削除に成功しました'
       end
