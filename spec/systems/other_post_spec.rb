@@ -11,7 +11,6 @@ RSpec.describe '投稿機能', type: :system do
     fill_in :user_email, with: "kuro@gmail.com"
     fill_in :user_password, with: "111111"
     click_button 'commit'
-    # binding.irb
   end
 
   describe '詳細情報の追加機能' do

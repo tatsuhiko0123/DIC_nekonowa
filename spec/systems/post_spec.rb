@@ -18,7 +18,6 @@ RSpec.describe '投稿機能', type: :system do
   describe '新規作成機能' do
     context '新規作成した場合' do
       it '作成した投稿が表示される' do
-        # binding.irb
         click_on '新規投稿', match: :first
         sleep(0.5)
         attach_file :post_image, "./app/assets/images/1.JPG"
@@ -61,7 +60,6 @@ RSpec.describe '投稿機能', type: :system do
         find("#post_prefecture").find("option[value='北海道']").select_option
         fill_in :post_address, with: "茨城県つくばみらい市福田195"
         click_on '投稿する'
-        # binding.irb
         expect(page).to have_content '紹介文を入力してください'
       end
     end
@@ -96,7 +94,6 @@ RSpec.describe '投稿機能', type: :system do
   describe '投稿編集機能' do
     context '自分の投稿を編集する場合' do
       it '投稿が編集される' do
-        # binding.irb
         click_link 'ゴマ'
         click_link '投稿を編集する'
         expect(page).to have_content "投稿を編集する"
@@ -134,7 +131,6 @@ RSpec.describe '投稿機能', type: :system do
       it 'お気に入り一覧に表示されなくなる' do
         click_link 'クロ'
         click_on '気になる一覧から削除'
-        # binding.irb
         expect(current_path).to have_content '/posts'
         expect(page).to have_content '投稿一覧'
       end
@@ -146,7 +142,6 @@ RSpec.describe '投稿機能', type: :system do
       it "検索したエリアの投稿が表示されること" do
         find("#search_prefecture").find("option[value='北海道']").select_option
         click_on '検索'
-        # binding.irb
         expect(page).to have_content '北海道'
         expect(page).not_to have_content 'クロ'
       end
