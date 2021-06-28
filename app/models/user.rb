@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_destroy :clean_conversations
+  
   mount_uploader :image, ImageUploader
 
   has_many :posts, dependent: :destroy
@@ -29,4 +31,9 @@ class User < ApplicationRecord
       user.admin = true
     end
   end
+
+  def clean_conversations
+    Conversation.where("(sender_id = ?) OR (recipient_id = ?)", self.id, self.id).destroy_all
+  end
+
 end
