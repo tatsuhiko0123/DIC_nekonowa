@@ -189,18 +189,18 @@ other_post5 = OtherPost.create!(
 Favorite.create!(
   [
     # ユーザー1
-    {user_id: user2.id, post_id: post2.id},
+    {user_id: user1.id, post_id: post2.id},
 
     # ユーザー2
-    {user_id: user3.id, post_id: post3.id},
+    {user_id: user2.id, post_id: post3.id},
     
     # ユーザー3
-    {user_id: user4.id, post_id: post4.id},
+    {user_id: user3.id, post_id: post4.id},
 
     # ユーザー4
-    {user_id: user5.id, post_id: post5.id},
+    {user_id: user4.id, post_id: post5.id},
 
     # ユーザー5
-    {user_id: user1.id, post_id: post1.id}
+    {user_id: user5.id, post_id: post1.id}
   ]
 )
