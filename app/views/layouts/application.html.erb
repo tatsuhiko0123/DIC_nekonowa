@@ -11,12 +11,12 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
   </head>
 
-  <body class="wrapper">
+  <body class="wrapper <%= controller.controller_name %>_<%= controller.action_name %>">
     <header>
       <div class="background"><p>〜  ねこの和 〜</p></div>
     </header>
 
-    <nav class="navbar navbar-expand-sm navbar-dark mb-3" style="background-color:rgb(238, 238, 238);">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:rgb(238, 238, 238);">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -54,7 +54,9 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
 
-    <%= yield %><br>
+    <div class="main_content">
+    <%= yield %>
+    </div>
 
     <footer class="footer">
       <p class="copy">&copy;nekonowa</p>
