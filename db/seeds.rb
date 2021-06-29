@@ -61,11 +61,11 @@ user5 = User.create!(
   admin: false
 )
 
-# ユーザー1
-post1 = Post.create!(
+# ユーザー1_1
+post1_1 = Post.create!(
   image: File.open("./app/assets/images/6.JPG"),
   comment: "ゴマ",
-  breed: 1,
+  breed: "雑種",
   gender: 1,
   age: 1,
   prefecture: 1,
@@ -73,11 +73,35 @@ post1 = Post.create!(
   user_id: user1.id
 )
 
-# ユーザー2
-post2 = Post.create!(
+# ユーザー1_2
+post1_2 = Post.create!(
+  image: File.open("./app/assets/images/11.JPG"),
+  comment: "ゴマ",
+  breed: "雑種",
+  gender: 1,
+  age: 1,
+  prefecture: 2,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user1.id
+)
+
+# ユーザー1_3
+post1_3 = Post.create!(
+  image: File.open("./app/assets/images/12.JPG"),
+  comment: "ゴマ",
+  breed: "雑種",
+  gender: 1,
+  age: 1,
+  prefecture: 3,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user1.id
+)
+
+# ユーザー2_1
+post2_1 = Post.create!(
   image: File.open("./app/assets/images/7.JPG"),
   comment: "クロ",
-  breed: 1,
+  breed: "雑種",
   gender: 1,
   age: 1,
   prefecture: 1,
@@ -85,11 +109,23 @@ post2 = Post.create!(
   user_id: user2.id
 )
 
-# ユーザー3
-post3 = Post.create!(
+# ユーザー2_2
+post2_2 = Post.create!(
+  image: File.open("./app/assets/images/13.JPG"),
+  comment: "クロ",
+  breed: "雑種",
+  gender: 1,
+  age: 1,
+  prefecture: 2,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user2.id
+)
+
+# ユーザー3_1
+post3_1 = Post.create!(
   image: File.open("./app/assets/images/8.JPG"),
   comment: "トラ",
-  breed: 1,
+  breed: "雑種",
   gender: 1,
   age: 1,
   prefecture: 1,
@@ -97,11 +133,23 @@ post3 = Post.create!(
   user_id: user3.id
 )
 
-# ユーザー4
-post4 = Post.create!(
+# ユーザー3_2
+post3_2 = Post.create!(
+  image: File.open("./app/assets/images/14.JPG"),
+  comment: "トラ",
+  breed: "雑種",
+  gender: 1,
+  age: 1,
+  prefecture: 2,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user3.id
+)
+
+# ユーザー4_1
+post4_1 = Post.create!(
   image: File.open("./app/assets/images/9.JPG"),
   comment: "ナツ",
-  breed: 1,
+  breed: "ボンベイ",
   gender: 1,
   age: 1,
   prefecture: 1,
@@ -109,14 +157,38 @@ post4 = Post.create!(
   user_id: user4.id
 )
 
-# ユーザー5
-post5 = Post.create!(
+# ユーザー4_2
+post4_2 = Post.create!(
+  image: File.open("./app/assets/images/15.JPG"),
+  comment: "ナツ",
+  breed: "ボンベイ",
+  gender: 1,
+  age: 1,
+  prefecture: 2,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user4.id
+)
+
+# ユーザー5_1
+post5_1 = Post.create!(
   image: File.open("./app/assets/images/10.JPG"),
   comment: "ココア",
-  breed: 1,
+  breed: "雑種",
   gender: 1,
   age: 1,
   prefecture: 1,
+  address: "茨城県つくばみらい市福田195",
+  user_id: user5.id
+)
+
+# ユーザー5_2
+post5_2 = Post.create!(
+  image: File.open("./app/assets/images/16.JPG"),
+  comment: "ココア",
+  breed: "雑種",
+  gender: 1,
+  age: 1,
+  prefecture: 2,
   address: "茨城県つくばみらい市福田195",
   user_id: user5.id
 )
@@ -131,7 +203,7 @@ other_post1 = OtherPost.create!(
   character: "おっとり",
   surrender: "自転車オッケー",
   note: "特に無し",
-  post_id: post1.id
+  post_id: post1_1.id
 )
 
 # post2
@@ -144,7 +216,7 @@ other_post2 = OtherPost.create!(
   character: "天邪鬼",
   surrender: "徒歩でも可",
   note: "特になし",
-  post_id: post2.id
+  post_id: post2_1.id
 )
 
 # post3
@@ -157,7 +229,7 @@ other_post3 = OtherPost.create!(
   character: "暴れん坊",
   surrender: "車で来れる方",
   note: "なし",
-  post_id: post3.id
+  post_id: post3_1.id
 )
 
 # post4
@@ -170,7 +242,7 @@ other_post4 = OtherPost.create!(
   character: "デブ",
   surrender: "同じ県の人",
   note: "特にないです",
-  post_id: post4.id
+  post_id: post4_1.id
 )
 
 # post5
@@ -183,24 +255,24 @@ other_post5 = OtherPost.create!(
   character: "元気がいい",
   surrender: "車で30分以内",
   note: "可愛がってください",
-  post_id: post5.id
+  post_id: post5_1.id
 )
 
 Favorite.create!(
   [
     # ユーザー1
-    {user_id: user1.id, post_id: post1.id},
+    {user_id: user1.id, post_id: post2_1.id},
 
     # ユーザー2
-    {user_id: user2.id, post_id: post2.id},
+    {user_id: user2.id, post_id: post1_1.id},
     
     # ユーザー3
-    {user_id: user3.id, post_id: post3.id},
+    {user_id: user3.id, post_id: post1_2.id},
 
     # ユーザー4
-    {user_id: user4.id, post_id: post4.id},
+    {user_id: user4.id, post_id: post1_3.id},
 
     # ユーザー5
-    {user_id: user5.id, post_id: post5.id}
+    {user_id: user5.id, post_id: post2_2.id}
   ]
 )
