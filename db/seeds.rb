@@ -64,7 +64,7 @@ user5 = User.create!(
 # ユーザー1_1
 post1_1 = Post.create!(
   image: File.open("./app/assets/images/6.JPG"),
-  comment: "ゴマ",
+  comment: "トラジロウです！よろしく。",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -76,7 +76,7 @@ post1_1 = Post.create!(
 # ユーザー1_2
 post1_2 = Post.create!(
   image: File.open("./app/assets/images/11.JPG"),
-  comment: "ゴマ",
+  comment: "猫鍋",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -88,7 +88,7 @@ post1_2 = Post.create!(
 # ユーザー1_3
 post1_3 = Post.create!(
   image: File.open("./app/assets/images/12.JPG"),
-  comment: "ゴマ",
+  comment: "マフラー巻いてるよ！",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -100,7 +100,7 @@ post1_3 = Post.create!(
 # ユーザー2_1
 post2_1 = Post.create!(
   image: File.open("./app/assets/images/7.JPG"),
-  comment: "クロ",
+  comment: "トラは毛繕い♪",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -112,7 +112,7 @@ post2_1 = Post.create!(
 # ユーザー2_2
 post2_2 = Post.create!(
   image: File.open("./app/assets/images/13.JPG"),
-  comment: "クロ",
+  comment: "ゴマのあくび",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -124,7 +124,7 @@ post2_2 = Post.create!(
 # ユーザー3_1
 post3_1 = Post.create!(
   image: File.open("./app/assets/images/8.JPG"),
-  comment: "トラ",
+  comment: "トラです！",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -136,7 +136,7 @@ post3_1 = Post.create!(
 # ユーザー3_2
 post3_2 = Post.create!(
   image: File.open("./app/assets/images/14.JPG"),
-  comment: "トラ",
+  comment: "みんなでお風呂",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -148,7 +148,7 @@ post3_2 = Post.create!(
 # ユーザー4_1
 post4_1 = Post.create!(
   image: File.open("./app/assets/images/9.JPG"),
-  comment: "ナツ",
+  comment: "リラックスモード",
   breed: "ボンベイ",
   gender: 1,
   age: 1,
@@ -160,7 +160,7 @@ post4_1 = Post.create!(
 # ユーザー4_2
 post4_2 = Post.create!(
   image: File.open("./app/assets/images/15.JPG"),
-  comment: "ナツ",
+  comment: "眠いなぁ",
   breed: "ボンベイ",
   gender: 1,
   age: 1,
@@ -172,7 +172,7 @@ post4_2 = Post.create!(
 # ユーザー5_1
 post5_1 = Post.create!(
   image: File.open("./app/assets/images/10.JPG"),
-  comment: "ココア",
+  comment: "何か用？",
   breed: "雑種",
   gender: 1,
   age: 1,
@@ -184,7 +184,7 @@ post5_1 = Post.create!(
 # ユーザー5_2
 post5_2 = Post.create!(
   image: File.open("./app/assets/images/16.JPG"),
-  comment: "ココア",
+  comment: "ゴマのアップ",
   breed: "雑種",
   gender: 1,
   age: 1,
